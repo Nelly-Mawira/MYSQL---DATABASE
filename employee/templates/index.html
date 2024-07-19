@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myForm</title>
+</head>
+<body>
+    <h1>People</h1>   
+ <form action="" method="post">
+    {% csrf_token %}
+    <label for="first_name">Firstname:</label>
+    <input type="text" name="first_name" id="first_name"><br><br>
+    <label for="last_name">Lastname:</label>
+    <input type="text" name="last_name" id="last_name"><br><br>
+    <label for="age">Age:</label>
+    <input type="text" name="age" id="age"><br><br>
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email"><br><br><br>
+    <input type="submit" value="Add People">
+ </form>
+ <h1>List of People</h1>
+
+ <ul>
+    {% for person in people %}
+
+        <li>{{ person.first_name }} {{ person.last_name }} {{ person.email }}</li>
+    {% endfor %}    
+
+ </ul>
+
+    
+    
+</body>
+</html>
